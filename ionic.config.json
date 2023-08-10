@@ -1,0 +1,7 @@
+{
+  "name": "app-mtg",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
