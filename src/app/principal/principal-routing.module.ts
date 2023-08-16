@@ -18,6 +18,26 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'cards',
+    loadChildren: () => import('../cards/cards-routing.module').then( m => m.CardsPageRoutingModule)
+  },
+  {
+    path: 'formats',
+    loadChildren: () => import('../formats/formats-routing.module').then( m => m.FormatsPageRoutingModule)
+  },
+  {
+    path: 'subtypes',
+    loadChildren: () => import('../subtypes/subtypes-routing.module').then( m => m.SubtypesPageRoutingModule)
+  },
+  {
+    path: 'types',
+    loadChildren: () => import('../types/types-routing.module').then( m => m.TypesPageRoutingModule)
+  },
+  {
+    path: 'sets',
+    loadChildren: () => import('../sets/sets-routing.module').then( m => m.SetsPageRoutingModule)
   }
 ];
 
