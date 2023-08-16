@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { SubtypesListComponent } from './subtypes-list/subtypes-list.component';
+import { SubtypesDetailsComponent } from './subtypes-details/subtypes-details.component';
 
-import { SubtypesPage } from './subtypes.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: SubtypesPage
+    component: SubtypesListComponent
+  },
+  {
+    path: 'detail',
+    component: SubtypesDetailsComponent
   }
 ];
 

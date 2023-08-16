@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { FormatsListComponent } from './formats-list/formats-list.component';
+import { FormatsDetailsComponent } from './formats-details/formats-details.component';
 
-import { FormatsPage } from './formats.page';
+
 
 const routes: Routes = [
   {
     path: '',
-    component: FormatsPage
+    component: FormatsListComponent
+  },
+  {
+    path: 'detail',
+    component: FormatsDetailsComponent
   }
 ];
 
