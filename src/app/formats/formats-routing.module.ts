@@ -11,10 +11,6 @@ const routes: Routes = [
     component: FormatsListComponent
   },
   {
-    path: 'detail',
-    component: FormatsDetailsComponent
-  },
-  {
     path: ':id',
     component: FormatsDetailsComponent
   }

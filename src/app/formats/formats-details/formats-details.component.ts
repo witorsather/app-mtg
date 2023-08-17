@@ -9,6 +9,7 @@ import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 export class FormatsDetailsComponent  implements OnInit {
 
   id: string | null = "";
+  
   constructor(route: ActivatedRoute) { 
     this.id = route.snapshot.paramMap.get('id');
   }
