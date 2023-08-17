@@ -1,3 +1,4 @@
+import { ActivatedRouteSnapshot, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -14,7 +15,6 @@ import { FormatsPageRoutingModule } from './formats-routing.module';
     FormsModule,
     IonicModule,
     FormatsPageRoutingModule
-  ],
-  
+  ]
 })
 export class FormatsPageModule {}

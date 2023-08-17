@@ -13,6 +13,10 @@ const routes: Routes = [
   {
     path: 'detail',
     component: FormatsDetailsComponent
+  },
+  {
+    path: ':id',
+    component: FormatsDetailsComponent
   }
 ];
 
