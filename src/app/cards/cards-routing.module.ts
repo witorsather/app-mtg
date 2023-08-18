@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { CardsListComponent } from './cards-list/cards-list.component';
 import { CardsDetailsComponent } from './cards-details/cards-details.component';
-import { resolve } from 'dns';
 import { CardsResolver } from './cards.resolver';
 
 const routes: Routes = [
@@ -11,7 +10,7 @@ const routes: Routes = [
     path: '',
     component: CardsListComponent,
     resolve: {
-      cardsData: CardsResolver
+      cardsResolver: CardsResolver
     }
   },
   {
