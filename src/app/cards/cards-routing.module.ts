@@ -1,24 +1,15 @@
+import { CardsDetailPageModule } from './cards-detail/cards-detail.module';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-import { CardsListComponent } from './cards-list/cards-list.component';
-import { CardsDetailsComponent } from './cards-details/cards-details.component';
-import { CardsResolver } from './cards.resolver';
 
 const routes: Routes = [
   {
     path: '',
-    component: CardsListComponent,
-    resolve: {
-      cardsResolver: CardsResolver
-    }
+    loadChildren: () => import('./cards-list/cards-list.module').then(m => m.CardsListPageModule)
   },
   {
     path: ':id',
-    component: CardsDetailsComponent,
-    resolve: {
-      cardsResolver: CardsResolver
-    }
+    loadChildren: () => import('./cards-detail/cards-detail.module').then(m => m.CardsDetailPageModule)
   }
 ];
 
