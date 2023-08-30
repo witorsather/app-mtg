@@ -17,4 +17,6 @@ import { CardsPageRoutingModule } from './cards-routing.module';
   ],
   
 })
-export class CardsPageModule {}
+export class CardsPageModule {
+
+}

@@ -19,4 +19,9 @@ import { CardsService } from '../cards.service';
   declarations: [CardsListPage],
   providers: [CardsService]
 })
-export class CardsListPageModule {}
+export class CardsListPageModule {
+  constructor(){
+    console.log("carregou cards list page");
+}
+
+}

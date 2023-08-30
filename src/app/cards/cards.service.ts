@@ -29,7 +29,7 @@ export class CardsService extends AbstractService<ModelCard, number> {
   //      // Faça algo com o objeto ModelCard recebido aqui.
   //    });
 
-  buscar(id: number): Observable<ModelCard> {
+  buscar(id: string): Observable<ModelCard> {
     return this.http.get<ModelCard>(`${this.url}/${id}`);
   }
   criar(objeto: ModelCard): Observable<ModelCard> {

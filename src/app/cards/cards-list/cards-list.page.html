@@ -13,7 +13,7 @@
   <ion-list *ngFor="let card of cards">
     <ion-item>
       <ion-card>
-        <ion-card-header>
+        <ion-card-header (click)="irParaCardDetail(card.id)">
           <ion-card-title>{{card.name}}</ion-card-title>
           <ion-card-subtitle>{{card.type}}</ion-card-subtitle>
         </ion-card-header>
@@ -21,7 +21,7 @@
           {{card.text}}
         </ion-card-content>
       </ion-card>
-      <ion-card>
+      <ion-card (click)="irParaCardDetail(card.id)">
         <img src="{{card.imageUrl}}">
       </ion-card>
     </ion-item>

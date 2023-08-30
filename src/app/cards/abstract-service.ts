@@ -7,7 +7,7 @@ export abstract class AbstractService<T, N> {
 
     abstract listar(): Observable<T>;
 
-    abstract buscar(id: N): Observable<T>;
+    abstract buscar(id: string): Observable<T>;
 
     abstract criar(objeto: T): Observable<T>;
 
