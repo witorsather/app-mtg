@@ -16,7 +16,9 @@ export class CardsDetailPage implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private cardsService: CardsService
-  ) {}
+  ) {
+    console.log("deu certo");
+  }
 
   ngOnInit() {
     const idDaRota = this.route.snapshot.paramMap.get('id');

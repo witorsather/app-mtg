@@ -29,3 +29,5 @@ node_modules/
 ios
 android
 chave_apk
+package-lock.json
+package.json

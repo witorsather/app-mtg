@@ -5,7 +5,7 @@ import { CardsListPage } from './cards-list.page';
 
 const routes: Routes = [
   {
-    path: 'cards',
+    path: '',
     component: CardsListPage
   }
 ];
