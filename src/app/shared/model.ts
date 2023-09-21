@@ -1,6 +1,10 @@
 export interface ModelCard {
     cards: Card[]
   }
+
+  export interface ModelCardSingle {
+    card: Card
+  }
   
   export interface Card {
     name: string

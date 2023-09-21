@@ -12,15 +12,16 @@
   </ion-header>
 </ion-content>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" *ngIf="dataLoaded">
   <ion-card-header>
     <ion-card>
-      <img src="{{card.imageUrl}}">
+      <img [src]="modelCardSingle.card.imageUrl">
     </ion-card>
-    <ion-card-title>{{card.name}}</ion-card-title>
-    <ion-card-subtitle>{{card.type}}</ion-card-subtitle>
+    <ion-card-title>{{modelCardSingle.card.name}}</ion-card-title>
+    <ion-card-subtitle>{{modelCardSingle.card.type}}</ion-card-subtitle>
   </ion-card-header>
   <ion-card-content>
-    {{card.text}}
+    {{modelCardSingle.card.text}}
   </ion-card-content>
 </ion-content>
+

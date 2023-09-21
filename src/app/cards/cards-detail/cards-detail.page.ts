@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CardsService } from '../cards.service';
-import { ModelCard } from 'src/app/shared/model';
+import { Card, ModelCard, ModelCardSingle } from 'src/app/shared/model';
+import { debounceTime, distinctUntilChanged, map, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-cards-detail',
@@ -11,7 +12,9 @@ import { ModelCard } from 'src/app/shared/model';
 export class CardsDetailPage implements OnInit {
   // precisa atribuir valor inicial a propriedade
   id: string = "";
-  card: any;
+  card!: Card;
+  modelCardSingle!: ModelCardSingle;
+  dataLoaded: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,7 +29,20 @@ export class CardsDetailPage implements OnInit {
     if (idDaRota !== null) {
       //obtem o valor do parametro cardId da url
       this.id = idDaRota;
-      this.card = this.cardsService.buscar(this.id);
+      console.log(`id: ${this.id}`);
+      this.cardsService.buscarCard(this.id)
+      .subscribe(res=>{
+        this.modelCardSingle = res;
+        this.dataLoaded = true;
+        console.log(`Dados carregados: ${res}`);
+      });
+       /* .pipe(
+          debounceTime(15000),
+          distinctUntilChanged(),
+          switchMap(async (res) => this.modelCardSingle = res)
+        );*/
+
+        console.log(this.modelCardSingle);
     }
   }
 }
