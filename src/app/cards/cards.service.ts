@@ -1,5 +1,6 @@
+import { Card } from 'src/app/shared/model';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { ModelCard } from '../shared/model';
 import { HttpClient } from '@angular/common/http';
 import { AbstractService } from './abstract-service';
@@ -30,8 +31,22 @@ export class CardsService extends AbstractService<ModelCard, number> {
   //    });
 
   buscar(id: string): Observable<ModelCard> {
-    return this.http.get<ModelCard>(`${this.url}/${id}`);
+    const httpCall = this.http.get<Card>(`${this.url}/${id}`);
+  
+    return httpCall.pipe(
+      map((card: Card) => {
+        const modelCard: ModelCard = {
+          cards: [card]
+        };
+        return modelCard;
+      })
+    );
   }
+  
+  
+  
+
+    
   criar(objeto: ModelCard): Observable<ModelCard> {
     // o metodo criar chama o metodo post da instancia http do HttpCliente, nesse metodo post ele usa
     // tipo genericio que e feito com <T> os angulos e um tipo de objeto dentro dos angulos, dessa forma

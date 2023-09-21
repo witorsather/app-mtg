@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CardsService } from '../cards.service';
-import { ModelCard } from 'src/app/shared/model';
+import { Card, ModelCard } from 'src/app/shared/model';
 
 @Component({
   selector: 'app-cards-detail',
@@ -11,13 +11,14 @@ import { ModelCard } from 'src/app/shared/model';
 export class CardsDetailPage implements OnInit {
   // precisa atribuir valor inicial a propriedade
   id: string = "";
-  card: any;
+  modelCard: ModelCard | undefined;
+  card!: Card;
 
   constructor(
     private route: ActivatedRoute,
     private cardsService: CardsService
   ) {
-    console.log("deu certo");
+     console.log("deu certo card detail");
   }
 
   ngOnInit() {
@@ -26,7 +27,11 @@ export class CardsDetailPage implements OnInit {
     if (idDaRota !== null) {
       //obtem o valor do parametro cardId da url
       this.id = idDaRota;
-      this.card = this.cardsService.buscar(this.id);
+      
+      this.cardsService.buscar(this.id).subscribe((modelCard: ModelCard) => {
+        this.card = modelCard.cards[0];
+        console.log(this.card);
+      });
     }
   }
 }
